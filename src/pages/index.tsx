@@ -2,8 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import {
+  Radio,
+  Dropdown,
+  Label,
+  Button,
+  Card,
+  Hero,
+} from "@hilliegithub/mycomponent-library";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -15,100 +23,48 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+        <div className="App-container">
+          <h1>Here are my component:</h1>
+          <Radio options={["Yes", "No", "Maybe"]} bgColor="#F04520" />
+          <Dropdown options={["yes", "no", "maybe"]} bgColor="#b19b11" />
+          <Dropdown options={["fakeoptions", "maybe"]} disabled={true} />
+          <div className="spacing">
+            <Label value="This is my lable component" bgColor="#3f3912" />
+            <Label value="Disable lable component" disabled bgColor="#3f3912" />
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
+          <div className="spacing">
+            <Button text="MyButton" bgColor="#3f3912" />
+            <Button text="Disabled" bgColor="#3f3912" disabled={true} />
+            {/* FONT COLOR */}
+          </div>
+          <div className="spacing">
+            <Card
+              cardTitle="HTML CARD"
+              img="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+              cardDesc="Does this look like html? what do you think?"
+              bgColor="#b19b11"
+            />
+            {/* <Dropdown options={["yes", "no", "maybe"]} bgColor="#b19b11" />
+          <Dropdown options={["fakeoptions", "maybe"]} disabled={true} /> */}
+          </div>
+          <div className="spacing">
+            {/* <Text value="Text component" disabled={false} bgColor="#b19b11" /> */}
+            <Radio
+              options={["Yes", "No", "Maybe"]}
+              disabled={false}
+              bgColor="F04520"
+            />
+          </div>
+          <div className="spacing">
+            <Hero
+              HeroText="Mac setup"
+              src="https://images.unsplash.com/photo-1585076641399-5c06d1b3365f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+            />
+          </div>
+          <div className="spacing"></div>
+          <div className="spacing"></div>
         </div>
       </main>
     </>
-  )
+  );
 }
