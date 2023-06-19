@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Assignment 12: Web Component Library
+### _Links to Repo and packaged_
 
-## Getting Started
 
-First, run the development server:
+This is the link to repo for my [Component-library](https://github.com/hilliegithub/mycomponent-library/tree/master/src).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+This is the link to repo for my [Library-Demo](https://github.com/hilliegithub/library-demo). ✨The Package  [Details](https://github.com/users/hilliegithub/packages/npm/package/mycomponent-library).✨
+
+## Running demo website
+
+Open your preferred command-line interface or terminal and copy the code below an run to clone the repo:
+
+```sh
+git clone https://github.com/hilliegithub/library-demo.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next, navigate to the cloned repo in your command-line interface or terminal
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```sh
+    cd <cloned_repo_folder>
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Build the docker image by running the command:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+docker build -t assignment12_image:dev .
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Once done, run the Docker image:
 
-## Learn More
+```sh
+docker run --name=McDonald_Hylton_coding_assignment12 -i -v ${pwd}:/mcdonald_hylton_ui_garden -v /mcdonald_hylton_ui_garden/node_modules -p 8083:3000 assignment12_image:dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Navigating to your server address in
+your preferred browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+http://localhost:8083
+```
+## To use the my component library
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Download and place [this](https://github.com/hilliegithub/library-demo/blob/main/.npmrc) file in root folder. 
 
-## Deploy on Vercel
+> Note: You need an access token to install GihHub Packages. Read [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next, run this in terminal for your project:
+```sh
+npm install @hilliegithub/mycomponent-library@0.0.1
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Run Storybook
+
+To access and run storybook for the components, download the component library and run:
+
+```sh
+npm run storybook
+```
+
+## Run Test
+
+To access and run tests for the components, download the component library and run:
+
+```sh
+npm run test
+```
